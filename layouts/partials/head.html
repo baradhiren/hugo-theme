@@ -1,4 +1,4 @@
-<head>
+<head id='head'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ if .IsPage }} {{ .Title }} | {{ end }}{{ .Site.Title }}</title>
@@ -12,8 +12,8 @@
   {{ if .Site.Params.Colortheme }}
     {{ .Scratch.Set "colortheme" .Site.Params.Colortheme }}
   {{ end }}
-  {{ $colortheme := .Scratch.Get "colortheme" }}
-  <link rel="stylesheet" href="{{ $colortheme | printf "css/style-%s.css" | absURL }}">
+  <!-- {{ $colortheme := .Scratch.Get "colortheme" }} -->
+  <link rel="stylesheet" href="{{ printf "css/toggle.css" | absURL }}">
   <!-- Custom CSS -->
   {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
   {{ `
