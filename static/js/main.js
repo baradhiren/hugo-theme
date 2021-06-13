@@ -10,8 +10,54 @@ if (!!$.prototype.justifiedGallery) {
   $(".article-gallery").justifiedGallery(options);
 }
 
+function getTimeAndSetCSS(){
+  var hr = (new Date()).getHours();
+  const isDayTime = hr > 6 && hr < 20;
+  var csslink = document.createElement("link");
+  var switcher = document.getElementsByClassName('js-toggle')[0];
+  var path = ""
+  csslink.setAttribute("rel", "stylesheet");
+  csslink.setAttribute("type", "text/css");
+  csslink.setAttribute("id", "theme-css");
+
+  if (!isUserAtHome()) {
+    path = "../"
+  }
+
+  if (isDayTime) {
+    csslink.setAttribute("href", path + "css/style-classic.css");
+    localStorage.setItem('darkMode', 'false');
+  }else {
+    if (localStorage.getItem('darkMode')) {
+      csslink.setAttribute("href", path + "css/style-dark.css");
+      switcher.classList.add('js-toggle--checked');
+    }else{
+      csslink.setAttribute("href", path + "css/style-classic.css");
+    }
+    
+  }
+  document.getElementsByTagName('head')[0].appendChild(csslink);
+}
+
+function isUserAtHome() {
+  window.homepagecheck = function() {
+      var check = false;
+      if(document.location.pathname === "/"){
+          check=true;
+          }
+      return check;
+      }
+  console.log(window.homepagecheck())
+  return window.homepagecheck()
+}
+
 $(document).ready(function() {
 
+  /**
+   * Sets site theme based on local time.
+   */
+  getTimeAndSetCSS()
+  
   /**
    * Shows the responsive navigation menu on mobile.
    */
