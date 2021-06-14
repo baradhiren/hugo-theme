@@ -12,43 +12,25 @@ if (!!$.prototype.justifiedGallery) {
 
 function getTimeAndSetCSS(){
   var hr = (new Date()).getHours();
-  const isDayTime = hr > 6 && hr < 20;
-  var csslink = document.createElement("link");
   var switcher = document.getElementsByClassName('js-toggle')[0];
-  var path = ""
-  csslink.setAttribute("rel", "stylesheet");
-  csslink.setAttribute("type", "text/css");
-  csslink.setAttribute("id", "theme-css");
-
-  if (!isUserAtHome()) {
-    path = "../"
-  }
-
-  if (isDayTime) {
-    csslink.setAttribute("href", path + "css/style-classic.css");
-    localStorage.setItem('darkMode', 'false');
-  }else {
-    if (localStorage.getItem('darkMode')) {
-      csslink.setAttribute("href", path + "css/style-dark.css");
-      switcher.classList.add('js-toggle--checked');
-    }else{
-      csslink.setAttribute("href", path + "css/style-classic.css");
-    }
+  const isDayTime = hr > 7 && hr < 20;
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
     
+    if (currentTheme === 'dark') {
+      switcher.classList.add('js-toggle--checked')
+    }
+  } else {
+    if (isDayTime) {
+      document.documentElement.setAttribute('data-theme', 'classic');
+      switcher.classList.remove('js-toggle--checked')
+    }else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      switcher.classList.add('js-toggle--checked')
+    }
   }
-  document.getElementsByTagName('head')[0].appendChild(csslink);
-}
-
-function isUserAtHome() {
-  window.homepagecheck = function() {
-      var check = false;
-      if(document.location.pathname === "/"){
-          check=true;
-          }
-      return check;
-      }
-  console.log(window.homepagecheck())
-  return window.homepagecheck()
 }
 
 $(document).ready(function() {
