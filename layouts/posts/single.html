@@ -2,6 +2,9 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
 <body class="max-width mx-auto px3 ltr">
+  <div id="toggle" style="position: absolute; top: 10px; left: 10px;">
+    {{ partial "toggle.html" . }}
+  </div>
   <div class="content index py4">
 
   {{ partial "page_nav.html" . }}
@@ -85,6 +88,7 @@
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
 <script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
 <script src={{ "/js/main.js" | relURL }}></script>
+<script src={{ "/js/toggle.js" | relURL }}></script>
 {{ $mathjax := false }}
 {{ if isset .Params "mathjax" }}
   {{ $mathjax = .Params.mathjax }}
