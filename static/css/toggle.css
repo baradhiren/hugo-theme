@@ -110,3 +110,18 @@
       .js-toggle:active .js-toggle-thumb {
         box-shadow: 0px 0px 5px 5px rgb(255, 167, 196);
       }
+
+      .flagselect {
+        border: 1px solid #333333;
+        padding: 0px;
+        margin: 0px;
+        font-weight: bold;
+        color: black;
+        font-size: 90%;
+      }
+      .flagnoselect {
+        padding: 0px;
+        margin: 0px;
+        color: #333333;
+        font-size: 90%;
+      }

@@ -1,0 +1,31 @@
+{{ if .Site.IsMultiLingual }}
+<!-- <nav aria-label="Language switcher">
+  <ul>
+    {{ range .Site.Languages }}
+    {{ if eq . $.Site.Language }}
+    <li><span aria-label="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }}</span>
+      {{ end }}
+      {{ end }}
+      <ul aria-labelledby="dropdown-title">
+        {{ range $.Translations }}
+        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
+      </ul>
+        {{ end }}
+    </li>
+  </ul>
+</nav> -->
+{{ $siteLanguages := site.Languages}}
+{{ $pageLang := .Page.Lang}}
+{{- range .Page.AllTranslations }}
+    {{ $translation := . }}
+    {{- range sort $siteLanguages "Weight" "asc" }}
+        {{- if eq $translation.Lang .Lang }}
+            {{ if eq $pageLang .Lang}}
+                <a class="flagselect" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageNameShort }}{{ .Params.languageFlag }}</a>
+            {{ else }}
+                <a class="flagnoselect" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageNameShort }}{{ .Params.languageFlag }}</a>
+            {{ end }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+{{ end }}
