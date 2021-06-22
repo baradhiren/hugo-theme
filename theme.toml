@@ -1,19 +1,19 @@
 name = "Cactus"
 license = "MIT"
-licenselink = "https://github.com/monkeyWzr/hugo-theme-cactus/blob/master/LICENSE"
-description = "A clean, responsive hugo theme for personal blog. Forked from hexo theme cactus created by @probberechts."
-homepage = "https://github.com/monkeyWzr/hugo-theme-cactus"
+licenselink = "https://github.com/baradhiren/hugo-theme/blob/main/LICENSE"
+description = "A clean, responsive hugo theme for personal blog. Forked from hugo theme cactus created by @monkeyWzr."
+homepage = "https://github.com/baradhiren/hugo-theme"
 tags = ["blog", "responsive", "clean"]
 features = ["mathjax", "customizable", "color"]
 min_version = "0.55"
 
 # If the theme has a single author
 [author]
-    name = "Zeran Wu"
-    homepage = "https://github.com/monkeyWzr"
+    name = "Hiren Barad"
+    homepage = "https://github.com/baradhiren"
 
 # If porting an existing theme
 [original]
-    author = "Pieter Robberechts"
-    homepage = "https://github.com/probberechts"
-    repo = "https://github.com/probberechts/hexo-theme-cactus"
+    author = "Zeran Wu"
+    homepage = "https://github.com/monkeyWzr"
+    repo = "https://github.com/monkeyWzr/hugo-theme-cactus"
