@@ -1,8 +1,6 @@
 ## Cactus
 
-A hugo theme for personal blog. Fork from hexo theme [cactus](https://github.com/probberechts/hexo-theme-cactus) created by @probberechts.
-
-[Live demo on github pages](https://www.takuzen.me/hugo-theme-cactus/).
+A hugo theme for personal blog. Fork from hugo theme [cactus](https://github.com/monkeyWzr/hugo-theme-cactus) created by @monkeyWzr.
 
 Some works are still in progress. See [TODOS](#todos) below.
 
@@ -10,7 +8,7 @@ Some works are still in progress. See [TODOS](#todos) below.
 
 1. clone cactus to your hugo site's `themes` folder.
 ```
-git clone https://github.com/monkeyWzr/hugo-theme-cactus.git themes/cactus
+git clone https://github.com/baradhiren/hugo-theme.git themes/cactus
 ```
 
 2. change your theme to cactus in your site config
@@ -273,6 +271,8 @@ The site config will be ignored when `mathjax` option exists in front matter.
 - [ ] Customizable copyright year
 - [ ] gallery
 - [ ] expose [mathjax configuration](https://docs.mathjax.org/en/latest/web/configuration.html#web-configuration) 
+- [ ] Multilingual support
+- [x] Dark mode support
 
 ## License
 

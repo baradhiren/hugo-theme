@@ -1330,6 +1330,13 @@ article .content .caption {
     align-self: flex-start;
     margin-right: 20px;
   }
+
+  #footer .credits {
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+  }
+
   #footer .footer-right {
     align-self: flex-end;
   }
