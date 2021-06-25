@@ -848,6 +848,7 @@ body {
   margin: 0;
 }
 #header-post #toc {
+  display: block;
   float: right;
   clear: both;
   overflow: auto;
@@ -855,7 +856,7 @@ body {
   padding-right: 2rem;
   max-width: 20em;
   max-height: calc(95vh - 7rem);
-  text-align: right;
+  text-align: left;
 }
 #header-post #toc a:hover {
   color: var(--cutty-sark-low);
