@@ -41,14 +41,14 @@
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
     <span class="h2">Topics</span>
-    <span class="widget tagcloud">
+    <div class="widget tagcloud" style="align-content: center; text-align: center;">
       {{ $AllRegularPagesCount := len .Site.RegularPages }}
       {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
-      <a style="font-size: {{ (add 0.5 (mul 5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
+      <a style="font-size: {{ (add 0.5 (mul 5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem; display: inline-block; margin-left: 10px; margin-top: 10px" href="{{ $elem.Page.Permalink }}">
         {{- .Page.Title -}}
       </a>
       {{ end }}
-    </span>
+    </div>
     <span class="h2">Most recent</span>
     {{ end }}
 
